@@ -1087,6 +1087,10 @@ footer .credits a {
   color: #fff;
 }
 
+.ion-icon{
+  padding-top: 1.2rem;
+}
+
 /*======================================
 //--//-->   CONtaCT FORM
 ======================================*/
@@ -1269,3 +1273,4 @@ footer .credits a {
     bottom: 15px;
   }
 }
+
