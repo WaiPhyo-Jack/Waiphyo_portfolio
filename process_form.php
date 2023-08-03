@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    $to = 'your@email.com'; // Replace with your email address
+    $to = 'cross.x226@gmail.com'; // Replace with your email address
     $headers = "From: $email" . "\r\n" .
                "Reply-To: $email" . "\r\n" .
                "X-Mailer: PHP/" . phpversion();
