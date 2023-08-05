@@ -763,53 +763,6 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-  const contactForm = document.getElementById("contactForm");
-  contactForm.addEventListener("submit", function (event) {
-    event.preventDefault();
 
-    const formData = new FormData(contactForm);
-
-    fetch("process_form.php", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          alert("Message sent successfully!");
-        } else {
-          alert("Message could not be sent. Please try again.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  });
-});
-  </script>
-  <?php
-  if ($_SERVER["REQUEST_METHOD"] === "POST") {
-      $name = $_POST['name'];
-      $email = $_POST['email'];
-      $subject = $_POST['subject'];
-      $message = $_POST['message'];
-  
-      $to = 'cross.x226@gmail.com'; // Replace with your email address
-      $headers = "From: $email" . "\r\n" .
-                 "Reply-To: $email" . "\r\n" .
-                 "X-Mailer: PHP/" . phpversion();
-  
-      $email_content = "Name: $name\n";
-      $email_content .= "Email: $email\n";
-      $email_content .= "Subject: $subject\n";
-      $email_content .= "Message:\n$message\n";
-  
-      $success = mail($to, $subject, $email_content, $headers);
-  
-      echo json_encode(["success" => $success]);
-  }
-  ?>
 </body>
 </html>
